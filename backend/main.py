@@ -13,6 +13,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to the LPP Solver API! The API is running."}
+
 @app.post("/solve", response_model=LPPResponse)
 def solve(request: LPPRequest):
     return solve_lpp(request)
