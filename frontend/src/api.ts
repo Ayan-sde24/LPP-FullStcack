@@ -40,6 +40,6 @@ export interface LPPResponse {
 }
 
 export const solveLPP = async (request: LPPRequest): Promise<LPPResponse> => {
-  const response = await axios.post<LPPResponse>('http://localhost:8000/solve', request);
+  const response = await axios.post<LPPResponse>('https://lpp-fullstcack-1.onrender.com', request);
   return response.data;
 };
